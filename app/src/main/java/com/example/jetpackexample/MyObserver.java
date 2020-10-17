@@ -1,6 +1,5 @@
 package com.example.jetpackexample;
 
-import android.content.Context;
 import android.util.Log;
 
 import androidx.lifecycle.Lifecycle;
