@@ -1,4 +1,4 @@
-package com.example.jetpackexample;
+package com.example.jetpackexample.observer;
 
 import android.util.Log;
 
