@@ -20,6 +20,7 @@
         <activity android:name=".viewbinding.ViewBindingActivity"/>
         <activity android:name=".databinding.activity.DataBindingActivity"/>
         <activity android:name=".databinding.activity.SecondActivity"/>
+        <activity android:name=".databinding.activity.TwoWayDataBinding"/>
     </application>
 
 </manifest>
