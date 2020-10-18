@@ -15,12 +15,11 @@ import com.example.jetpackexample.viewbinding.ViewBindingActivity;
 
 public class SampleActivity extends AppCompatActivity implements View.OnClickListener{
     private static final String TAG = "SampleActivity";
-    private ActivitySampleBinding binding;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "SampleActivity onCreate called");
-        binding = ActivitySampleBinding.inflate(getLayoutInflater());
+        ActivitySampleBinding binding = ActivitySampleBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.lifecycle.setOnClickListener(this);
         binding.viewBinding.setOnClickListener(this);
