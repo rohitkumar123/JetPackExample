@@ -9,4 +9,6 @@
     <string name="view_binding">View Binding</string>
     <string name="data_binding">Data Binding</string>
     <string name="show_data_model">Show data model</string>
+    <string name="hello_second_activity">Hello Second Activity</string>
+    <string name="start_second_activity">Start second activity</string>
 </resources>
