@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+<!--    tools:viewBindingIgnore="true" If you want a layout file to be ignored while generating binding classes, -->
+<!--    add the tools:viewBindingIgnore="true" attribute to the root view of that layout file-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jetPack_introduction"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginVertical="20dp"
+        android:textColor="@color/colorPrimary"/>
+    <Button
+        android:id="@+id/lifecycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lifecycle"
+        android:textColor="@color/colorPrimaryDark"/>
+    <Button
+        android:id="@+id/viewBinding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_binding"
+        android:textColor="@color/colorPrimaryDark"/>
+    <Button
+        android:id="@+id/dataBinding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/data_binding"
+        android:textColor="@color/colorPrimaryDark"/>
+
+</LinearLayout>

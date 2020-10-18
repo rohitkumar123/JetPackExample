@@ -1,7 +1,6 @@
 package com.example.jetpackexample.viewbinding;
 
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +13,7 @@ public class ViewBindingActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityViewbindingBinding binding = ActivityViewbindingBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        setContentView(binding.getRoot());
         binding.firstName.setText(getString(R.string.first_name));
         binding.lastName.setText(getString(R.string.last_name));
     }

@@ -4,4 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="first_name">Test</string>
     <string name="last_name">User</string>
+    <string name="jetPack_introduction">JetPack Introduction</string>
+    <string name="lifecycle">LifeCycle</string>
+    <string name="view_binding">View Binding</string>
+    <string name="data_binding">Data Binding</string>
+    <string name="show_data_model">Show data model</string>
 </resources>
