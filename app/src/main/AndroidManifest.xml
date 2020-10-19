@@ -21,6 +21,7 @@
         <activity android:name=".databinding.activity.DataBindingActivity"/>
         <activity android:name=".databinding.activity.SecondActivity"/>
         <activity android:name=".databinding.activity.TwoWayDataBinding"/>
+        <activity android:name=".room.RoomActivity"/>
     </application>
 
 </manifest>

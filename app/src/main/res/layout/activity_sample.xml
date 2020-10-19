@@ -33,5 +33,11 @@
         android:layout_height="wrap_content"
         android:text="@string/data_binding"
         android:textColor="@color/colorPrimaryDark"/>
+    <Button
+        android:id="@+id/room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/room"
+        android:textColor="@color/colorPrimaryDark"/>
 
 </LinearLayout>

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.jetpackexample.databinding.ActivitySampleBinding;
 import com.example.jetpackexample.databinding.activity.DataBindingActivity;
 import com.example.jetpackexample.observer.MainActivity;
+import com.example.jetpackexample.room.RoomActivity;
 import com.example.jetpackexample.viewbinding.ViewBindingActivity;
 
 public class SampleActivity extends AppCompatActivity implements View.OnClickListener{
@@ -24,6 +25,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         binding.lifecycle.setOnClickListener(this);
         binding.viewBinding.setOnClickListener(this);
         binding.dataBinding.setOnClickListener(this);
+        binding.room.setOnClickListener(this);
     }
 
     @Override
@@ -37,6 +39,9 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.dataBinding:
                 startActivity(new Intent(this, DataBindingActivity.class));
+                break;
+            case R.id.room:
+                startActivity(new Intent(this, RoomActivity.class));
                 break;
             default:
                 break;
