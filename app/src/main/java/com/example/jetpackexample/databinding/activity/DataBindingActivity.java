@@ -1,6 +1,8 @@
 package com.example.jetpackexample.databinding.activity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -15,7 +17,7 @@ import com.example.jetpackexample.databinding.model.UserData;
 import com.example.jetpackexample.databinding.model.UserDataObserver;
 import com.example.jetpackexample.databinding.presenter.DataBindingActivityPresenter;
 
-public class DataBindingActivity extends AppCompatActivity implements DataBindingActivityContract.View {
+public class DataBindingActivity extends AppCompatActivity implements DataBindingActivityContract.View, View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +32,40 @@ public class DataBindingActivity extends AppCompatActivity implements DataBindin
         userDataObserver.lastName.set("User Observable");
         binding.setUserDataObserver(userDataObserver);
         binding.setPresenter(dataBindingActivityPresenter);
+        // ViewBindingAdapter
+        binding.includeLayout.textView.setText("Testing Include Secondary Layout");
+        binding.setMethodListener(this);
+        binding.setEventListener(new EventHandler(this));
     }
 
+    public void onClickFriend(View view) {
+        Toast.makeText(this, "<<<==onClickFriend==>>>", Toast.LENGTH_SHORT).show();
+    }
     @Override
     public void showData(UserDataObserver userData) {
         String firstName = userData.firstName.get();
         String lastName = userData.lastName.get();
         Toast.makeText(this, "FirstName: "+ firstName +"\n"+ "LastName: " +lastName, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(this, "<<<====DataBindingActivity=>>>>", Toast.LENGTH_SHORT).show();
+    }
+
+//    @Override
+//    public void onClick(View v) {
+//        Toast.makeText(this.mContext, "Event Handler", Toast.LENGTH_SHORT).show();
+//    }
+
+    public class EventHandler implements View.OnClickListener {
+        Context mContext;
+        public EventHandler(Context context){
+            this.mContext = context;
+        }
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(this.mContext, "Event Handler", Toast.LENGTH_SHORT).show();
+        }
     }
 }

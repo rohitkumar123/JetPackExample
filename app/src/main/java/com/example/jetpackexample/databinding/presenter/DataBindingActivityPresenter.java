@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.example.jetpackexample.databinding.activity.TwoWayDataBinding;
+import com.example.jetpackexample.databinding.activity.SecondActivity;
 import com.example.jetpackexample.databinding.contract.DataBindingActivityContract;
 import com.example.jetpackexample.databinding.model.UserDataObserver;
 
@@ -24,6 +24,6 @@ public class DataBindingActivityPresenter implements DataBindingActivityContract
 
     @Override
     public void showList() {
-        this.mContext.startActivity(new Intent(this.mContext, TwoWayDataBinding.class));
+        this.mContext.startActivity(new Intent(this.mContext, SecondActivity.class));
     }
 }

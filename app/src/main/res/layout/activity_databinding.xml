@@ -1,53 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
-        <variable name="user" type="com.example.jetpackexample.databinding.model.User"/>
-        <variable name="userData" type="com.example.jetpackexample.databinding.model.UserData"/>
-        <variable name="userDataObserver" type="com.example.jetpackexample.databinding.model.UserDataObserver"/>
+<!--        <import type="com.example.jetpackexample.databinding.activity.DataBindingActivity.EventHandler"/>-->
+        <variable
+            name="user"
+            type="com.example.jetpackexample.databinding.model.User" />
+
+        <variable
+            name="userData"
+            type="com.example.jetpackexample.databinding.model.UserData" />
+
+        <variable
+            name="userDataObserver"
+            type="com.example.jetpackexample.databinding.model.UserDataObserver" />
+
         <variable
             name="presenter"
             type="com.example.jetpackexample.databinding.presenter.DataBindingActivityPresenter" />
+        <variable
+            name="methodListener"
+            type="com.example.jetpackexample.databinding.activity.DataBindingActivity" />
+        <variable
+            name="eventListener"
+            type="com.example.jetpackexample.databinding.activity.DataBindingActivity.EventHandler" />
     </data>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{user.firstName}"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{user.lastName}"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{userData.firstName}"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{userData.lastName}"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{userDataObserver.firstName}"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{userDataObserver.lastName}"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="@{() -> presenter.onShowData(userDataObserver)}"
-        android:text="@string/show_data_model"
-        android:textColor="@color/colorPrimaryDark"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="@{() -> presenter.showList()}"
-        android:text="@string/start_second_activity"
-        android:textColor="@color/colorPrimaryDark"/>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userData.firstName}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userData.lastName}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userDataObserver.firstName}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userDataObserver.lastName}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{methodListener::onClickFriend}"
+            android:text="@string/method_reference"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{methodListener::onClick}"
+            android:text="@string/method_reference"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{eventListener::onClick}"
+            android:text="@string/method_reference"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> presenter.onShowData(userDataObserver)}"
+            android:text="@string/listener_binding"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> presenter.showList()}"
+            android:text="@string/start_second_activity"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <include
+            android:id="@+id/includeLayout"
+            layout="@layout/layout_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 </layout>
